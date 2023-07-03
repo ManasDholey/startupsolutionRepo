@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    var controller = ViewContext.RouteData.Values["Controller"];
+    var action = ViewContext.RouteData.Values["Action"];
+    ViewData["Controller"] = controller;
+}
+
+@*<h1>Index</h1>*@
+<section class="hero-wrap hero-wrap-2" style="background-image: url('@Url.Content("~/images/bg_2.png")');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="http://startupsolution.org.in/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-0 bread">About Us</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt bg-light">
+    <div class="container">
+        <div class="row d-flex no-gutters div-pading-top">
+            <div class="col-md-6 d-flex ">
+                <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url('@Url.Content("~/images/about.JPG")');">
+                </div>
+            </div>
+            <div class="col-md-6 pl-md-5 py-md-5">
+                <div class="heading-section pl-md-4 pt-md-5">
+                    <span class="subheading">Welcome to Accounting</span>
+                    <h2 class="mb-4">We Are the Best Accounting Agency</h2>
+                    <p>Our mission is to digitize accounts in the era of globalization & digitization for ultra growth of organization by saving time & money both. We work with delegation & honesty. We are always trying to deliver before time, error free service. We believe that our growth is in our client’s positive satisfaction & growth.</p>
+                    @*<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*@Html.Action("Accounting", "About")*@
+@Html.Action("About", "Home")
+<div id="htmlFooter">
+    @Html.Action("Footer", "About")
+</div>
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/SubcriptionScript.js"></script>
+}

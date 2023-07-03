@@ -1,0 +1,123 @@
+﻿@model Email
+@{
+    var controller = ViewContext.RouteData.Values["Controller"];
+}
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions
+{
+    public string GetAntiXsrfRequestToken() => Xsrf.GetAndStoreTokens(Context).RequestToken;
+}
+<footer class="footer">
+    <div class="container-fluid px-lg-5">
+        <div class="row">
+            <div class="col-md-8 py-5">
+                <div class="row">
+                    <div class="col-md-4 mb-md-0 mb-4">
+                        <h2 class="footer-heading">About us</h2>
+                        <p style="color:#fff">Our mission is to digitize accounts in the era of globalization & digitization for ultra growth of organization by saving time & money both.</p>
+                        <ul class="ftco-footer-social p-0">
+                            <li class="ftco-animate"><a href='@Url.Content("https://twitter.com/priyankadholey")' data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href='@Url.Content("https://www.facebook.com/Atsolutionhubcom-106938227818048/?modal=admin_todo_tour")' target="_blank" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href='@Url.Content("https://www.instagram.com/priyankadholey/?hl=en")' data-toggle="tooltip" data-placement="top" target="_blank" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 col-lg-10">
+                                <div class="row">
+                                    <div class="col-md-4 mb-md-0 mb-4">
+                                        @*<h2 class="footer-heading">Services</h2>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="py-1 d-block copyright">Market Analysis</a></li>
+                                            <li><a href="#" class="py-1 d-block copyright">Accounting Advisor</a></li>
+                                            <li><a href="#" class="py-1 d-block copyright">General Consultancy</a></li>
+                                            <li><a href="#" class="py-1 d-block copyright">Structured Assestment</a></li>
+                                        </ul>*@
+                                    </div>
+                                    <div class="col-md-4 mb-md-0 mb-4">
+                                        <h2 class="footer-heading">Discover</h2>
+                                        <ul class="list-unstyled">
+                                            <li><a href="@Url.Action("Index","About")" class="py-1 d-block copyright">About Us</a></li>
+                                            <li><a href="@Url.Action("Index","Contact")" class="py-1 d-block copyright">Contract Us</a></li>
+                                            <li><a href="@Url.Action("Index","Services")" class="py-1 d-block copyright">Services</a></li>
+                                            <li><a href="@Url.Action("Index","Home")" class="py-1 d-block copyright">Home</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 mb-md-0 mb-4">
+                                        @*<h2 class="footer-heading">Resources</h2>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="py-1 d-block copyright">Security</a></li>
+                                            <li><a href="#" class="py-1 d-block copyright">Global</a></li>
+                                            <li><a href="#" class="py-1 d-block copyright">Charts</a></li>
+                                            <li><a href="#" class="py-1 d-block copyright">Privacy</a></li>
+                                        </ul>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-md-5">
+                    <div class="col-md-12">
+                        <p class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                        @*<div class="credits">
+                            Powered by<a href='@Url.Content("https://www.facebook.com/manash.dholey/")' target="_blank"> &nbsp;Asp.Net Developer Manash</a>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-md-5 py-4 aside-stretch-right pl-lg-5">
+                <h2 class="footer-heading">Free consultation</h2>
+                <form id="myForm" asp-controller="@controller" asp-action="Footer" onsubmit="return jQueryAjaxPost(this);" class="contactForm">
+                    <div class="form-group">
+                        <input type="hidden" id="RequestVerificationToken" name="RequestVerificationToken"
+                               value="@GetAntiXsrfRequestToken()">
+                    </div>
+                    <div class="form-group">
+                        @*<label for="Name">Name</label>*@
+                        <label class="label" asp-for="Name "></label>
+                        <input type="text" class="form-control" asp-for="Name" name="Name" id="name" placeholder="Name">
+                        @* <input for="Name" name="Name" class="form-control" placeholder="Your Name" />*@
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*<label for="Email">Email</label>
+        <input for="email" name="To" class="form-control" placeholder="Your Email" />*@
+                        <label class="label" asp-for="To"></label>
+                        <input type="email" class="form-control" name="To" asp-for="To" id="email" placeholder="Email">
+                        <span asp-validation-for="To" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*<label for="Subject">Subject</label>
+        <input for="Subject" name="Subject" class="form-control" placeholder="Subject" />*@
+                        <label class="label" asp-for="Subject"></label>
+                        <input type="text" class="form-control" name="Subject" asp-for="Subject" id="subject" placeholder="Subject">
+                        <span asp-validation-for="Subject" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        @*<label for="Message">Message</label>
+        <textarea name="Body" id="" for="Message" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>*@
+                        <label class="label" asp-for="Body"></label>
+                        <textarea name="Body" class="form-control" id="message" asp-for="Body" cols="30" rows="4" placeholder="Message"></textarea>
+                        <span asp-validation-for="Body" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary" />
+                        @*<button type="button" onclick="jQueryAjaxPost(this);" class="form-control btn btn-primary send-message">Send A Message</button>*@
+                    </div>
+                    <div id="content">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+

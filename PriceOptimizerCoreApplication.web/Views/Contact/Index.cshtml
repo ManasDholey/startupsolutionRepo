@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Contact Page";
+    var controller = ViewContext.RouteData.Values["Controller"];
+    var action = ViewContext.RouteData.Values["Action"];
+    ViewData["Controller"] = controller;
+}
+
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('@Url.Content("~/images/contact.jpg")');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="http://startupsolution.org.in/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact Us <i class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-0 bread">Contact Us</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="send-sms-div">
+    @Html.Action("ContactUs", "Contact")
+</div>
+
+@*Data Source=SQL5080.site4now.net;Initial Catalog=DB_A67025_PriyankaDholey;User Id=DB_A67025_PriyankaDholey_admin;Password=YOUR_DB_PASSWORD*@
+
+@*<div id="map" class="map"></div>*@
+
+@*@Html.Action("Subscribe", "Home")*@
+<div id="htmlFooter">
+    @Html.Action("Footer", "Contact")
+</div>
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/ContactUsScript.js"></script>
+}

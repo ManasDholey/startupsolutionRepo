@@ -1,0 +1,21 @@
+﻿-----------------------------------------------------------------------------
+Date : 28-10-2020 23:00:48
+
+System.Exception
+Message : check exception log 
+StackTrace :    at PriceOptimizerCoreApplication.web.Controllers.ContactController.ContactUsAsync(Email email) in D:\Accounts\PriceOptimizerCoreApplication\PriceOptimizerCoreApplication.web\Controllers\ContactController.cs:line 50
+-----------------------------------------------------------------------------
+Date : 02-10-2022 03:29:41
+
+-----------------------------------------------------------------------------
+-----------------------ControllerName-----------------------------------ActionName-------------------
+ControllerName-HomeController
+ActionName-SendEmailBody
+-----------------------------------------------------------------------------
+System.Net.Mail.SmtpException
+Message : The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
+StackTrace :    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at PriceOptimizerCoreApplication.web.Util.EmailHelper.SendEmailBody(Email emailModel, String To, String ControllerName) in E:\Accounts\PriceOptimizerCoreApplication\PriceOptimizerCoreApplication.web\Util\EmailHelper.cs:line 80
