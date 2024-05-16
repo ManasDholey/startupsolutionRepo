@@ -20,7 +20,7 @@
 @Html.Action("AboutServices", "Services")
 
 @Html.Action("Accounting", "About")
-<div class="bg-light" @*style="background-image:url('@Url.Content("~/images/Untitleddesign01.png")');"*@>
+<div class="bg-light" @*style="background-image:url('@Url.Content("~/images/Untitleddesign01.png")');"*@ style="padding:5px;margin:5px">
     <div class="show-video">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -85,7 +85,7 @@
 
 <!-- /SECTION -->
 
-@Html.Action("PriceAndPlans", "Home")
+@* @Html.Action("PriceAndPlans", "Home") *@
 <div id="htmlFooter">
     @Html.Action("Footer", "Services")
 </div>

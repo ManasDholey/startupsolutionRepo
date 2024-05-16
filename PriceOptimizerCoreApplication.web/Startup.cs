@@ -20,6 +20,7 @@ namespace PriceOptimizerCoreApplication.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.InstallServicesInAssembly(Configuration);
+            services.AddControllersWithViews();
             //services.AddAutoMapper(typeof(Startup));
             //services.AddScoped<IProductRepository, ProductRepository>(); 
             // services.AddScoped<ISpGenericRepository,SpGenericRepository>(); 
@@ -78,18 +79,23 @@ namespace PriceOptimizerCoreApplication.web
             app.UseAuthorization();
 
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "defaultBlog",
+                //    pattern: "{controller=Blog}/{action=Index}/{id?}");
             });
-            //app.UseMvc();
-            app.UseMvc(routes =>
-            {
+            
+            ////app.UseMvc();
+            //app.UseMvc(routes =>
+            //{
 
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //});
 
         }
     }

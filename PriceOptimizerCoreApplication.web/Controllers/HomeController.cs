@@ -106,20 +106,20 @@ namespace PriceOptimizerCoreApplication.web.Controllers
             }
            
         }   
-        [HttpGet]
-        public IActionResult PriceAndPlans()
-        {
-            try
-            {
-                return PartialView("~/Views/Home/_PartialPriceAndPlans.cshtml");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, ex.Message);
-                throw;
-            }
+        //[HttpGet]
+        //public IActionResult PriceAndPlans()
+        //{
+        //    try
+        //    {
+        //        return PartialView("~/Views/Home/_PartialPriceAndPlans.cshtml");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, ex.Message);
+        //        throw;
+        //    }
             
-        }
+        //}
 
         [HttpGet]
         public IActionResult Footer()

@@ -4,7 +4,7 @@ using PriceOptimizerCoreApplication.web.Models;
 
 namespace PriceOptimizerCoreApplication.web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class BlogController : Controller
     {
         public IActionResult Index()

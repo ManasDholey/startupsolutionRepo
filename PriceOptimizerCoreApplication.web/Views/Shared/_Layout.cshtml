@@ -45,7 +45,7 @@
                             <div class="row">
                                 <div class="col-md-6 d-flex align-items-center">
                                     <p class="mb-0 phone pl-md-2">
-                                        <a href="tel:7439817093" class="mr-2"><span class="fa fa-phone mr-1"></span>+917439817093</a>
+                                        @* <a href="tel:7439817093" class="mr-2"><span class="fa fa-phone mr-1"></span>+917439817093</a> *@
                                         <a href="mailto:startupsolutionorg@gmail.com"><span class="fa fa-paper-plane mr-1"></span>startupsolutionorg@gmail.com</a>
                                     </p>
                                 </div>
@@ -67,9 +67,6 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">
-                    startupsolution.org.in <p style="font-size: 23px; padding:1px">GSTIN - 19BUIPD0298J1ZC</p>
-                </a>
 
                 <form action="#0" class="searchform order-sm-start order-lg-last">
                     <div class="form-group d-flex">
@@ -85,8 +82,8 @@
                         <li class='@Html.IsActive("Home","Index")'><a href="@Url.Action("Index","Home")" class="nav-link">Home</a></li>
                         <li class='@Html.IsActive("About","Index")'><a href="@Url.Action("Index","About")" class="nav-link">About</a></li>
                         <li class='@Html.IsActive("Services","Index")'><a href="@Url.Action("Index","Services")" class="nav-link">Services</a></li>
-                        @*<li class='@Html.IsActive("CaseStudy","Index")'><a href="@Url.Action("Index","CaseStudy")" class="nav-link">Case Study</a></li>
-                            <li class='@Html.IsActive("Blog","Index")'><a href="@Url.Action("Index","Blog")" class="nav-link">Blog</a></li>*@
+                        @*<li class='@Html.IsActive("CaseStudy","Index")'><a href="@Url.Action("Index","CaseStudy")" class="nav-link">Case Study</a></li>*@
+                        <li class='@Html.IsActive("Blog","Index")'><a href="@Url.Action("Index","Blog")" class="nav-link">Blog</a></li>
                         <li class='@Html.IsActive("Contact","Index")'><a href="@Url.Action("Index","Contact")" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
